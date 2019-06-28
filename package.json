@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build:commonjs": "babel src --out-dir lib",
+    "coverage": "npm test -- --coverage",
     "test": "jest"
   },
   "repository": {
