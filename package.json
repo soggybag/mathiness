@@ -2,12 +2,13 @@
   "name": "mathiness",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:commonjs": "babel src --out-dir lib",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/soggybag/mathiness/issues"
   },
-  "homepage": "https://github.com/soggybag/mathiness#readme"
+  "homepage": "https://github.com/soggybag/mathiness#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "jest": "^24.8.0"
+  }
 }
