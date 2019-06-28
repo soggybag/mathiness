@@ -1,9 +1,16 @@
-<script src="index.js"></script>
+<!-- <script src="lib/index.js"></script> -->
+
+
 <script>
+
+	Number.prototype.pad = function(before = 1, after = 1) {
+		const str = this.toString().split('.')
+		const ls = str[0].padStart(before, '0')
+		const rs = str[1].padEnd(after, '0')
+		return `${ls}.${rs}`
+	}
+
 	const x = Math.PI
-	
-	console.log('-- round --')
-	console.log(x.round())
 	
 	console.log('-- pad --')
 	console.log(x.pad(0, 5))

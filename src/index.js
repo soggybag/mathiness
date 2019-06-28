@@ -4,11 +4,11 @@ Number.prototype.round = function() {
 	return Math.round(this)
 }
 
-Number.prototype.pad = function(before = 0, after = 0) {
-	const n = this.toFixed(after)
-	const a = n.split('.')[0]
-	const b = a.substr(0, before - a.length) + n
-	return b
+Number.prototype.pad = function(before = 1, after = 1) {
+	const str = this.toString().split('.')
+	const ls = str[0].padStart(before, '0')
+	const rs = str[1].padEnd(after, '0')
+	return `${ls}.${rs}`
 }
 
 module.exports.mathinessVersion = () => {
@@ -20,7 +20,7 @@ module.exports.random = (n) => {
 }
 
 class BigNumber {
-	constructor(n = 0) {
+	constructor(n = '0') {
 		this.value = n.toString()
 	}
 
